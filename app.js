@@ -18,8 +18,8 @@ app.use(bodyParser.json())
 app.use(logger('dev'));
 
 const configuration = new Configuration({
-  organization: "org-qBQHCLeQaHLxFBGCiokoQqaC",
-  apiKey: "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"
+  organization: process.env.ORGANIZATION,
+  apiKey: process.env.API_KEY
 })
 const openai = new OpenAIApi(configuration)
 
