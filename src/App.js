@@ -148,13 +148,13 @@ function App() {
   const handleSubmit =async (e)=>{
     try {
      
+      setUserChat("")
       e.preventDefault();
       setChat([...chat,userObj]);
-      const {data} =await axios.post(`http://localhost:9000/chat`,{
+      const {data} =await axios.post(`https://chatgpt-jogu.onrender.com/chat`,{
         userChat
       })
       
-      setUserChat("")
       console.log(userChat)
       setChat([...chat,userObj,{message:data.message,role:"ai"}])
     } catch (error) {

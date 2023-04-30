@@ -79,16 +79,16 @@ const Sidebar = () => {
     <>
       <CDBSidebar className='sidebars' textColor="#fff" style={{height:"100vh"}} toggled={toggle}>
         <CDBSidebarHeader  prefix={<i className="fa fa-bars fa-large"></i>} >
-          Chat Gpt
+          Chat Gpt by Sunny
         </CDBSidebarHeader>
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
             
-              <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
+              {/* <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
           
               <CDBSidebarMenuItem icon="table">Tables</CDBSidebarMenuItem>
           
-              <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem> */}
        
               <Select
                 options={languageDropdown}
@@ -102,15 +102,7 @@ const Sidebar = () => {
           </CDBSidebarMenu>
         </CDBSidebarContent>
 
-        <CDBSidebarFooter style={{ textAlign: 'center' }}>
-          <div
-            style={{
-              padding: '20px 5px',
-            }}
-          >
-            Sidebar Footer
-          </div>
-        </CDBSidebarFooter>
+       
       </CDBSidebar>
     </>
   )

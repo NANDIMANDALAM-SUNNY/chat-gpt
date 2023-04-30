@@ -3,11 +3,12 @@ import { store } from '../App'
 import ChatInput from './ChatInput';
 import { TypeAnimation } from 'react-type-animation';
 import { useSpeechSynthesis } from 'react-speech-kit';
+import ChatResponse from './ChatResponse';
 
 
 
 const Main = () => {
-    const {userChat,handleSubmit,setUserChat,chat} = useContext(store)
+    const {chat} = useContext(store)
     const { speak } = useSpeechSynthesis();
     const [selectedVoice, setSelectedVoice] = useState(null);
     const handleSpeak = (voices) => {
@@ -74,9 +75,8 @@ useEffect(()=>{
                         item.role !=='ai' &&  window.scrollTo({ top:document.body.scrollHeight+400, behavior: 'smooth' })
                       }
                     </>:<>
-                    <TypeAnimation  cursor={false} sequence={[item.message]} speed={75} />
-                    {/* <button onClick={()=>handleSpeak(item.message)}>Speak</button>
-                    <button onClick={() => speak({ text: item.message })}>Speak</button> */}
+                   <ChatResponse response = {item.message}/>
+                    {/* <TypeAnimation  cursor={false} sequence={[item.message]} speed={75} /> */}
                     </>
                   }
                   </div>
